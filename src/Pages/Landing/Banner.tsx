@@ -1,3 +1,5 @@
+import React from "react";
+
 interface IBannerProps {
     art: string;
     year: string;
