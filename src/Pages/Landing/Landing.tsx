@@ -2,10 +2,11 @@
 import React from "react";
 import Banner from "./Banner";
 import Info from "./Info";
+import config from '../../../appconfig.json'
 
 
-export default function Landing(config: any) {
-    const { bannerArt, year } = config.config;
+export default function Landing() {
+    const { bannerArt, year } = config;
 
     return (
         <div id="landing">
