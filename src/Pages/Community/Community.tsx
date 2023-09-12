@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import ChallengeBanner from "./ChallengeBanner";
 import NavBar from "../../common/NavBar";
 import DifficultySelector from "./DifficultySelector";
-import Showcase from "./Showcase";
-
-
-interface ICommunityProps {
-}
+import Showcase from "../../common/Showcase";
 
 export enum Difficulty {
     beginner,
@@ -35,7 +31,7 @@ export default function Community() {
             <NavBar />
             <ChallengeBanner />
             <DifficultySelector changeDifficulty={setDifficulty}/>
-            <Showcase difficulty={contentClass} />
+            <Showcase difficulty={contentClass} view="community" />
         </div>
     )
 }

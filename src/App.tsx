@@ -1,9 +1,10 @@
 import React from 'react'
 import './App.css'
-import { Link, Outlet, RootRoute, Route, Router } from '@tanstack/react-router'
+import { Outlet, RootRoute, Route, Router } from '@tanstack/react-router'
 import { FluentProvider, webLightTheme } from '@fluentui/react-components';
 import Landing from './Pages/Landing/Landing'
 import Community from './Pages/Community/Community';
+import Progress from './Pages/Progress/Progress';
 
 
 const rootRoute = new RootRoute({
@@ -23,7 +24,13 @@ const communityRoute = new Route({
   component: Community,
 })
 
-const routeTree = rootRoute.addChildren([indexRoute, communityRoute]) // add more created routes in the list
+const progressRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: '/progress',
+  component: Progress,
+})
+
+const routeTree = rootRoute.addChildren([indexRoute, communityRoute, progressRoute]) // add more created routes in the list
 export const router = new Router({ routeTree })
 
 // Register your router for maximum type safety

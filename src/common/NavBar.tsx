@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Avatar, Button } from "@fluentui/react-components";
+import { router } from "../App";
 
 interface INavProps {
     loggedIn: boolean;
@@ -17,7 +18,7 @@ export default function NavBar() {
 
     return (
         <div id="nav-bar" className={navClass}>
-            <Button onClick={() => console.log("im getting clicked")}>Get Started</Button>
+            <Button onClick={() => router.navigate({ to: "/progress"}) }>Get Started</Button>
             <Avatar onClick={avatarClicked}/>
         </div>
     )

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Difficulty } from "./Community";
 import {
     makeStyles,
     shorthands,
@@ -11,11 +10,9 @@ import type {
     SelectTabData ,
     SelectTabEvent,
 } from "@fluentui/react-components";
+import Showcase from "../../common/Showcase";
+import { Difficulty } from "../Community/Community";
 
-
-interface IDifficultySelectorProps {
-    changeDifficulty: (diff: Difficulty) => void;
-}
 
 const useStyles = makeStyles({
     root: {
@@ -28,32 +25,47 @@ const useStyles = makeStyles({
     },
 });
 
+export default function Progress() {
+    const [difficulty, setDifficulty] = useState(Difficulty.beginner);
+    const contentClass = changeDifficulty();
 
-export default function DifficultySelector(props: IDifficultySelectorProps) {
-    const changeDifficulty  = props.changeDifficulty;
+    function changeDifficulty() : string {
+        console.log("we are changing the difficulty");
+        switch (difficulty) {
+            case Difficulty.mid:
+                return "some-experience"
+            case Difficulty.experienced:
+                return "experienced"
+            case Difficulty.beginner:
+            default:
+                return "beginner"
+        }
+    }
+
     const styles = useStyles();
     const onTabSelect = (event: SelectTabEvent, data: SelectTabData) => {
         switch (data.value) {
             case "mid":
-                changeDifficulty(Difficulty.mid);
+                setDifficulty(Difficulty.mid);
                 break;
             case "experienced":
-                changeDifficulty(Difficulty.experienced);
+                setDifficulty(Difficulty.experienced);
                 break;
             case "beginner":
             default:
-                changeDifficulty(Difficulty.beginner);
+                setDifficulty(Difficulty.beginner);
                 break;
         }
     };
 
     return (
         <div id="difficulty-selector" className={styles.root}>
-            <TabList onTabSelect={onTabSelect}>
+            <TabList onTabSelect={onTabSelect} vertical>
                 <Tab value="beginner">Beginner</Tab>
                 <Tab value="mid">Some Experience</Tab>
                 <Tab value="experienced">Experienced</Tab>
             </TabList>
+            <Showcase difficulty={contentClass} view="progress"/>
         </div>
     )
 }

@@ -17,6 +17,7 @@ import {
 
 interface IShowcaseProps {
     difficulty: string;
+    view: string;
 }
 
 const resolveAsset = (asset: string) => {
@@ -35,13 +36,13 @@ const useStyles = makeStyles({
 });
 
 export default function Showcase(props: IShowcaseProps) {
-    const difficulty = props.difficulty;
+    const { view, difficulty } = props;
     const styles = useStyles()
 
     // TODO: CHANGE THIS TO INCLUDE LOTS OF CARDS WITH DUMMY DATA
     // MAYBE EVEN INCLUDE THE overflow COMPONENT FROM FLUENT UI
     return (
-        <div id="community-content" className={difficulty}>
+        <div id="community-content" className={`${view} ${difficulty}`}>
             <Card className={styles.card}>
                 <CardHeader
                     image={
