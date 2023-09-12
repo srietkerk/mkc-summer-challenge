@@ -1,9 +1,10 @@
 import React from 'react'
 import './App.css'
-import { RootRoute, Router } from '@tanstack/react-router'
+import { RootRoute, Route, Router } from '@tanstack/react-router'
 import { FluentProvider, webLightTheme } from '@fluentui/react-components';
 import Landing from './Pages/Landing/Landing'
 import config from '../appconfig.json'
+import Community from './Pages/Community/Community';
 
 
 const rootRoute = new RootRoute({
@@ -12,13 +13,13 @@ const rootRoute = new RootRoute({
 
 
 // example of another route to add
-// const aboutRoute = new Route({
-//   getParentRoute: () => rootRoute,
-//   path: '/about',
-//   component: About,
-// })
+const communityRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: '/community',
+  component: Community,
+})
 
-const routeTree = rootRoute.addChildren([]) // add more created routes in the list
+const routeTree = rootRoute.addChildren([communityRoute]) // add more created routes in the list
 export const router = new Router({ routeTree })
 
 // Register your router for maximum type safety
@@ -32,7 +33,8 @@ function App() {
   return (
     <>
       <FluentProvider theme={webLightTheme}>
-        <Landing config={config} />
+        <Landing config={{...config}} />
+        <Community />
       </FluentProvider>
     </>
   )

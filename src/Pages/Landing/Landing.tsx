@@ -5,7 +5,7 @@ import Info from "./Info";
 
 
 export default function Landing(config: any) {
-    const { bannerArt, year } = config;
+    const { bannerArt, year } = config.config;
 
     return (
         <div id="landing">
