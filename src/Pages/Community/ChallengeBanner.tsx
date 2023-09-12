@@ -8,7 +8,6 @@ interface IChallengeBannerProps {
 
 
 export default function ChallengeBanner() {
-    console.log(challenges.day1);
     return (
         <div id="challenge-banner">
             {challenges.day1}

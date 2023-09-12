@@ -1,4 +1,6 @@
 {
-    "bannerArt": "hello",
-    "year": "2024"
+    "bannerArt": "./public/dino-banner.png",
+    "year": "2024",
+    "backgroundColor": "#2e3e24",
+    "textColor": "#fff"
 }

@@ -12,6 +12,7 @@ import type {
 } from "@fluentui/react-components";
 import Showcase from "../../common/Showcase";
 import { Difficulty } from "../Community/Community";
+import NavBar from "../../common/NavBar";
 
 
 const useStyles = makeStyles({
@@ -30,7 +31,6 @@ export default function Progress() {
     const contentClass = changeDifficulty();
 
     function changeDifficulty() : string {
-        console.log("we are changing the difficulty");
         switch (difficulty) {
             case Difficulty.mid:
                 return "some-experience"
@@ -59,7 +59,8 @@ export default function Progress() {
     };
 
     return (
-        <div id="difficulty-selector" className={styles.root}>
+        <div id="progress-page" className={styles.root}>
+            <NavBar />
             <TabList onTabSelect={onTabSelect} vertical>
                 <Tab value="beginner">Beginner</Tab>
                 <Tab value="mid">Some Experience</Tab>

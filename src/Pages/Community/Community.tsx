@@ -15,7 +15,6 @@ export default function Community() {
     const contentClass = changeDifficulty();
 
     function changeDifficulty() : string {
-        console.log("we are changing the difficulty");
         switch (difficulty) {
             case Difficulty.mid:
                 return "some-experience"

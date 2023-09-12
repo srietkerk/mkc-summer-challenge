@@ -1,5 +1,4 @@
 import React from 'react'
-import './App.css'
 import { Outlet, RootRoute, Route, Router } from '@tanstack/react-router'
 import { FluentProvider, webLightTheme } from '@fluentui/react-components';
 import Landing from './Pages/Landing/Landing'

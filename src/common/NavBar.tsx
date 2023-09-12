@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Avatar, Button } from "@fluentui/react-components";
 import { router } from "../App";
+import '../styles/navbar.less'
 
 interface INavProps {
     loggedIn: boolean;
@@ -12,7 +13,6 @@ export default function NavBar() {
     const navClass = loggedIn ? "logged-in" : "logged-out";
 
     const avatarClicked = () => {
-        console.log("avatar was clicked");
         setLoggedIn(!loggedIn);
     }
 

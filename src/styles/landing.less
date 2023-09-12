@@ -1,0 +1,52 @@
+#landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--landing-back-color);
+}
+
+#landing-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-image: var(--banner-image-url);
+    margin: 0;
+    padding: 0;
+    background-size: 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+}
+
+#landing-info {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--landing-text-color); //make this a variable to 
+
+    #landing-info-content {
+        width: 50rem;
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #landing-info-text {
+            width: 50rem;
+            h3 {
+                text-decoration: underline;
+            }
+        }
+
+        button {
+            margin-top: 2rem;
+            width: 20rem;
+        }
+    }
+}
