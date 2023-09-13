@@ -6,32 +6,32 @@
         "id": "_f4s6wcXyu5Fg",
         "description": "Get to know the MakeCode arcade editor"
     },
-    "beginner-2": {
+    "_Y8VUmcHYsdsy": {
         "title": "Intro to MakeCode Arcade",
         "difficulty": 1,
         "estimatedTime": "15 minutes",
-        "id": "_f4s6wcXyu5Fg",
-        "Description": "Get to know the MakeCode arcade editor"
+        "id": "_Y8VUmcHYsdsy",
+        "description": "Play the thing"
     },
-    "beginner-3": {
+    "32777-59846-95775-11055": {
         "title": "Intro to MakeCode Arcade",
         "difficulty": 1,
         "estimatedTime": "15 minutes",
-        "id": "_f4s6wcXyu5Fg",
-        "Description": "Get to know the MakeCode arcade editor"
+        "id": "32777-59846-95775-11055",
+        "description": "Wowzers"
     },
-    "beginner-4": {
+    "39705-92830-48491-01106": {
         "title": "Intro to MakeCode Arcade",
         "difficulty": 1,
         "estimatedTime": "15 minutes",
-        "id": "_f4s6wcXyu5Fg",
-        "Description": "Get to know the MakeCode arcade editor"
+        "id": "39705-92830-48491-01106",
+        "description": "Get to know the MakeCode arcade editor"
     },
-    "beginner-5": {
+    "27640-75402-47530-91242": {
         "title": "Intro to MakeCode Arcade",
         "difficulty": 1,
         "estimatedTime": "15 minutes",
-        "id": "_f4s6wcXyu5Fg",
-        "Description": "Get to know the MakeCode arcade editor"
+        "id": "27640-75402-47530-91242",
+        "description": "Get to know the MakeCode arcade editor"
     }
 }
