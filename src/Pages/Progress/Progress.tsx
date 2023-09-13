@@ -33,7 +33,7 @@ export default function Progress() {
     function changeDifficulty() : string {
         switch (difficulty) {
             case Difficulty.mid:
-                return "some-experience"
+                return "intermediate"
             case Difficulty.experienced:
                 return "experienced"
             case Difficulty.beginner:
@@ -64,7 +64,7 @@ export default function Progress() {
             <div id="progress-page-content">
                 <TabList onTabSelect={onTabSelect} vertical>
                     <Tab value="beginner">Beginner</Tab>
-                    <Tab value="mid">Some Experience</Tab>
+                    <Tab value="mid">Intermediate</Tab>
                     <Tab value="experienced">Experienced</Tab>
                 </TabList>
                 <Showcase difficulty={contentClass} view="progress"/>

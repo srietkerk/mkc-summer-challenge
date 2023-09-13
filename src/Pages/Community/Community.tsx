@@ -18,7 +18,7 @@ export default function Community() {
     function changeDifficulty() : string {
         switch (difficulty) {
             case Difficulty.mid:
-                return "some-experience"
+                return "intermediate"
             case Difficulty.experienced:
                 return "experienced"
             case Difficulty.beginner:

@@ -51,7 +51,7 @@ export default function DifficultySelector(props: IDifficultySelectorProps) {
         <div id="difficulty-selector" className={styles.root}>
             <TabList onTabSelect={onTabSelect}>
                 <Tab value="beginner">Beginner</Tab>
-                <Tab value="mid">Some Experience</Tab>
+                <Tab value="mid">Intermediate</Tab>
                 <Tab value="experienced">Experienced</Tab>
             </TabList>
         </div>
