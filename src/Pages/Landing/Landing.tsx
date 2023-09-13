@@ -1,4 +1,3 @@
-/// <reference path="../../../typings/config.d.ts" />
 import React from "react";
 import Banner from "./Banner";
 import Info from "./Info";
