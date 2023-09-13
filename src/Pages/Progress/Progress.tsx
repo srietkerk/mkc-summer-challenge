@@ -2,6 +2,11 @@ import { useState } from "react";
 import Showcase from "../../common/Showcase";
 import NavBar from "../../common/NavBar";
 import DifficultySelector, { Difficulty } from "../../common/DifficultySelector";
+import {
+    Field,
+    ProgressBar,
+    ProgressBarProps,
+  } from "@fluentui/react-components";
 
 const beginnerProgressCardData: ShowcaseData[] = [
     {
@@ -176,6 +181,8 @@ const experiencedProgressCardData: ShowcaseData[] = [
 
 export default function Progress() {
     const [difficulty, setDifficulty] = useState(Difficulty.beginner);
+    const [activitiesCompleted, setActivitiesCompleted] = useState(0);
+    const difficultyLengths = [10, 8, 7];
 
     const progressData = () => {
         switch (difficulty) {
@@ -193,8 +200,22 @@ export default function Progress() {
         <div id="progress-page">
             <NavBar />
             <div id="progress-page-content">
-                <DifficultySelector changeDifficulty={setDifficulty} vertical={true} />
-                <Showcase difficulty={difficulty} view="progress" compData={progressData()}/>
+                <div id="selector-container">
+                    <DifficultySelector changeDifficulty={setDifficulty} vertical={true} />
+                </div>
+                <div id="activities-container">
+                    <div id="started">
+                        <h2>In Progress</h2>
+                        <Field validationMessage={`${difficulty} Activities Completed`} validationState="none">
+                            <ProgressBar value={activitiesCompleted} />
+                        </Field>
+                        <Showcase difficulty={difficulty} view="progress" compData={progressData()}/>
+                    </div>
+                    <div className="not-started">
+                        <h2>Not Started</h2>
+                        <Showcase difficulty={difficulty} view="progress" compData={progressData()}/>
+                    </div>
+                </div>
             </div>
         </div>
     )
