@@ -49,6 +49,7 @@ export default function Overiew(props: IOverviewProps) {
                     description={<Caption1>{`Difficulty: ${difficulty} | Time to complete: ${estimatedTime}`}</Caption1>}
                 />
                 <p>{description}</p>
+                <Button onClick={() => window.open("https://arcade.makecode.com/", '_blank')}>Try it!</Button>
             </Card>
         </div>
     )
