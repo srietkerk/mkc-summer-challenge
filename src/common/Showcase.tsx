@@ -63,7 +63,7 @@ export default function Showcase(props: IShowcaseProps) {
         <div id="showcase" className={`${view} ${difficulty}`}>
             {beginnerCardCommunityData.map((data) => {
                 return (
-                <Card>
+                <Card key={data["share-id"]}>
                     <CardHeader
                         image={<Avatar />}
                         header={
