@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { Difficulty } from "./Community";
 import {
     makeStyles,
@@ -10,6 +10,7 @@ import {
 import type { 
     SelectTabData ,
     SelectTabEvent,
+    SelectTabEventHandler,
 } from "@fluentui/react-components";
 
 
@@ -32,7 +33,8 @@ const useStyles = makeStyles({
 export default function DifficultySelector(props: IDifficultySelectorProps) {
     const changeDifficulty  = props.changeDifficulty;
     const styles = useStyles();
-    const onTabSelect = (event: SelectTabEvent, data: SelectTabData) => {
+    // @ts-ignore
+    const onTabSelect: SelectTabEventHandler = (event: SelectTabEvent, data: SelectTabData) => {
         switch (data.value) {
             case "mid":
                 changeDifficulty(Difficulty.mid);

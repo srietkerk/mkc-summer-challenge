@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
     makeStyles,
     shorthands,
@@ -43,6 +43,7 @@ export default function Progress() {
     }
 
     const styles = useStyles();
+    // @ts-ignore
     const onTabSelect = (event: SelectTabEvent, data: SelectTabData) => {
         switch (data.value) {
             case "mid":

@@ -1,10 +1,10 @@
-import React from "react";
+// import React from "react";
 import challenges from '../../../challenges.json';
 
 
-interface IChallengeBannerProps {
-    difficulty: string;
-}
+// interface IChallengeBannerProps {
+//     difficulty: string;
+// }
 
 
 export default function ChallengeBanner() {

@@ -1,13 +1,13 @@
-import React from "react";
+// import React from "react";
 import { Button } from "@fluentui/react-components";
 import { router } from "../../App";
 
-interface IInfoProps {
+// interface IInfoProps {
 
-}
+// }
 
 
-export default function Info(props: IInfoProps) {
+export default function Info() {
     // on check it out clicked, launch the community route
     return (
         <div id="landing-info">

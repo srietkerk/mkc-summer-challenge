@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ChallengeBanner from "./ChallengeBanner";
 import NavBar from "../../common/NavBar";
 import DifficultySelector from "./DifficultySelector";
