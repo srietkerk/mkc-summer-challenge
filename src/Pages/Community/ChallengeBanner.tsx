@@ -10,7 +10,10 @@ interface IChallengeBannerProps {
 export default function ChallengeBanner() {
     return (
         <div id="challenge-banner">
-            {challenges.day1}
+            <div id="challenge-banner-content">
+                <h2>Today's Challenge!</h2>
+                {challenges.day1}
+            </div>
         </div>
     )
 }

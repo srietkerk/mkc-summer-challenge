@@ -1,11 +1,12 @@
 import React from "react";
-import { ArrowReplyRegular, ShareRegular } from "@fluentui/react-icons";
+import { ArrowReplyRegular, ShareRegular, EyeRegular } from "@fluentui/react-icons";
 import {
     makeStyles,
     Body1,
     Caption1,
     Button,
     shorthands,
+    Avatar,
 } from "@fluentui/react-components";
   
 import {
@@ -15,66 +16,75 @@ import {
     CardPreview,
 } from "@fluentui/react-components";
 
+const beginnerCardCommunityData = [
+    {
+        "header-img": "path-to-img (or fetch)",
+        "header-img-alt": "John Doe profile picture",
+        "header-body-name": "John Doe",
+        "activity-submitted": "Chase the Pizza",
+        "time-submitted": "12345678",
+        "share-link": "https://makecode.com/_YAJF9d7AR9cK",
+        "share-id": "_YAJF9d7AR9cK"
+    },
+    {
+        "header-img": "path-to-img (or fetch)",
+        "header-img-alt": "Christy Crayon profile picture",
+        "header-body-name": "Christy Crayon",
+        "activity-submitted": "Create a music player",
+        "time-submitted": "12345679",
+        "share-link": "https://makecode.com/_UTFhwWd5fEDp",
+        "share-id": "_UTFhwWd5fEDp"
+    },
+    {
+        "header-img": "path-to-img (or fetch)",
+        "header-img-alt": "Pauly Pencil profile picture",
+        "header-body-name": "Pauly Pencil",
+        "activity-submitted": "Pizza Party",
+        "time-submitted": "12345678",
+        "share-link": "https://makecode.com/_f4s6wcXyu5Fg",
+        "share-id": "_f4s6wcXyu5Fg"
+    }
+]
+
+const resolveAsset = (asset: string) => {
+    return `https://makecode.com/api/${asset}/thumb`;
+};
+
 interface IShowcaseProps {
     difficulty: string;
     view: string;
 }
 
-const resolveAsset = (asset: string) => {
-    const ASSET_URL =
-      "https://raw.githubusercontent.com/microsoft/fluentui/master/packages/react-components/react-card/stories/assets/";
-  
-    return `${ASSET_URL}${asset}`;
-};
-
-const useStyles = makeStyles({
-    card: {
-      ...shorthands.margin("auto"),
-      width: "720px",
-      maxWidth: "100%",
-    },
-});
-
 export default function Showcase(props: IShowcaseProps) {
     const { view, difficulty } = props;
-    const styles = useStyles()
 
-    // TODO: CHANGE THIS TO INCLUDE LOTS OF CARDS WITH DUMMY DATA
-    // MAYBE EVEN INCLUDE THE overflow COMPONENT FROM FLUENT UI
+    // TODO: Make the data that is shown change based on the difficulty that is fed here
     return (
-        <div id="community-content" className={`${view} ${difficulty}`}>
-            <Card className={styles.card}>
-                <CardHeader
-                    image={
-                    <img
-                        src={resolveAsset("avatar_elvia.svg")}
-                        alt="Elvia Atkins avatar picture"
+        <div id="showcase" className={`${view} ${difficulty}`}>
+            {beginnerCardCommunityData.map((data) => {
+                return (
+                <Card>
+                    <CardHeader
+                        image={<Avatar />}
+                        header={
+                        <Body1>
+                            <b>{data["header-body-name"]}</b>
+                        </Body1>
+                        }
+                        description={<Caption1>{data["activity-submitted"]}</Caption1>}
                     />
-                    }
-                    header={
-                    <Body1>
-                        <b>Elvia Atkins</b> mentioned you
-                    </Body1>
-                    }
-                    description={<Caption1>5h ago · About us - Overview</Caption1>}
-                />
 
-                <CardPreview
-                    logo={
-                    <img src={resolveAsset("docx.png")} alt="Microsoft Word document" />
-                    }
-                >
-                    <img
-                    src={resolveAsset("doc_template.png")}
-                    alt="Preview of a Word document: About Us - Overview"
-                    />
-                </CardPreview>
+                    <CardPreview>
+                        <img src={resolveAsset(data["share-id"])} alt="Microsoft MakeCode game thumbnail" />
+                    </CardPreview>
 
-                <CardFooter>
-                    <Button icon={<ArrowReplyRegular fontSize={16} />}>Reply</Button>
-                    <Button icon={<ShareRegular fontSize={16} />}>Share</Button>
-                </CardFooter>
-            </Card>
+                    <CardFooter>
+                        <Button icon={<EyeRegular fontSize={16} />} onClick={() => window.open(data["share-link"], '_blank')}>View Code</Button>
+                    </CardFooter>
+                </Card>
+                )
+            })}
+
         </div>
     )
 

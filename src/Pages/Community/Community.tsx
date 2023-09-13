@@ -3,6 +3,7 @@ import ChallengeBanner from "./ChallengeBanner";
 import NavBar from "../../common/NavBar";
 import DifficultySelector from "./DifficultySelector";
 import Showcase from "../../common/Showcase";
+import '../../styles/community.less'
 
 export enum Difficulty {
     beginner,
@@ -30,7 +31,10 @@ export default function Community() {
             <NavBar />
             <ChallengeBanner />
             <DifficultySelector changeDifficulty={setDifficulty}/>
-            <Showcase difficulty={contentClass} view="community" />
+            <div id="community-content">
+                <h2 className="community-content-title">{`${contentClass} submissions`}</h2>
+                <Showcase difficulty={contentClass} view="community" />
+            </div>
         </div>
     )
 }
