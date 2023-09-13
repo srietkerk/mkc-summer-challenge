@@ -181,7 +181,7 @@ const experiencedProgressCardData: ShowcaseData[] = [
 
 export default function Progress() {
     const [difficulty, setDifficulty] = useState(Difficulty.beginner);
-    const [activitiesCompleted, setActivitiesCompleted] = useState(0);
+    const [activitiesCompleted, setActivitiesCompleted] = useState(0.1);
     const difficultyLengths = [10, 8, 7];
 
     const progressData = () => {
@@ -198,7 +198,7 @@ export default function Progress() {
 
     return (
         <div id="progress-page">
-            <NavBar />
+            <NavBar view="progress"/>
             <div id="progress-page-content">
                 <div id="selector-container">
                     <DifficultySelector changeDifficulty={setDifficulty} vertical={true} />
@@ -207,7 +207,7 @@ export default function Progress() {
                     <div id="started">
                         <h2>In Progress</h2>
                         <Field validationMessage={`${difficulty} Activities Completed`} validationState="none">
-                            <ProgressBar value={activitiesCompleted} />
+                            <ProgressBar value={activitiesCompleted} thickness="large" color="success"/>
                         </Field>
                         <Showcase difficulty={difficulty} view="progress" compData={progressData()}/>
                     </div>

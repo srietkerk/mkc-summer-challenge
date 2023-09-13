@@ -21,7 +21,8 @@ const resolveAsset = (asset: string) => {
     return `https://makecode.com/api/${asset}/thumb`;
 };
 
-
+// we might be able to just make the overview a modal so there are less pages involved
+// but this also might make things a bit distracting (maybe something to A/B test)
 export default function Overiew(props: IOverviewProps) {
     const {
         title, 
@@ -34,7 +35,7 @@ export default function Overiew(props: IOverviewProps) {
 
     return (
         <div id="activity-overview" className={title}>
-            <NavBar />
+            <NavBar view="overview"/>
             <Button onClick={() => router.navigate({ to: "/progress"}) }>Back</Button>
             <Card key={title} orientation="horizontal">
                 <CardPreview>

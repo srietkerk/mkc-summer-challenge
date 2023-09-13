@@ -121,7 +121,7 @@ export default function Community() {
 
     return (
         <div id="community-page">
-            <NavBar />
+            <NavBar view="community"/>
             <ChallengeBanner />
             <DifficultySelector changeDifficulty={setDifficulty}/>
             <div id="community-content">
