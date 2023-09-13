@@ -15,6 +15,8 @@ import {
 } from "@fluentui/react-components";
 
 import '../styles/showcase.less'
+import { router } from "../App";
+import { Link } from "@tanstack/react-router";
 
 
 
@@ -54,6 +56,9 @@ export default function Showcase(props: IShowcaseProps) {
                     </CardPreview>
 
                     <CardFooter>
+                        {
+                            data.relativeLink && <Link to="/overview/$activityId" params={{activityId: data.contentId}}>Try Activity</Link>
+                        }
                         <Button icon={buttonIcon} onClick={() => window.open(data.contentLink, '_blank')}>{buttonContent}</Button>
                     </CardFooter>
                 </Card>

@@ -7,4 +7,5 @@ interface ShowcaseData {
     showAvatar: boolean;
     avatarImg?: string;
     avatarAlt?: string;
+    relativeLink?: boolean;
 }

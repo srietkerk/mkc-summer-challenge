@@ -3,6 +3,7 @@ import { FluentProvider, webLightTheme } from '@fluentui/react-components';
 import Landing from './Pages/Landing/Landing'
 import Community from './Pages/Community/Community';
 import Progress from './Pages/Progress/Progress';
+import Overiew from './Pages/ActivityOverview/Overview';
 
 
 const rootRoute = new RootRoute({
@@ -28,7 +29,28 @@ const progressRoute = new Route({
   component: Progress,
 })
 
-const routeTree = rootRoute.addChildren([indexRoute, communityRoute, progressRoute]) // add more created routes in the list
+const getActivity = async (activityId: string): Promise<Activity> => {
+  const res = await fetch("/ActivityData.json");
+  if (!res.ok) throw new Error("No activities exist")
+  const actvities = await res.json();
+  return actvities[activityId]
+}
+
+const activityRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: '/overview/$activityId',
+  loader: async ({ params: { activityId } }) => {
+    return await getActivity(activityId);
+  },
+  component: ({ useLoader }) => {
+    const activity = useLoader();
+    return (
+      <Overiew activity={activity} />
+    )
+  }
+})
+
+const routeTree = rootRoute.addChildren([indexRoute, communityRoute, progressRoute, activityRoute]) // add more created routes in the list
 export const router = new Router({ routeTree })
 
 // Register your router for maximum type safety
