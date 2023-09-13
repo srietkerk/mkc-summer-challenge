@@ -1,11 +1,9 @@
 import React from "react";
-import { ArrowReplyRegular, ShareRegular, EyeRegular } from "@fluentui/react-icons";
+import { EyeRegular } from "@fluentui/react-icons";
 import {
-    makeStyles,
     Body1,
     Caption1,
     Button,
-    shorthands,
     Avatar,
 } from "@fluentui/react-components";
   
@@ -15,6 +13,8 @@ import {
     CardHeader,
     CardPreview,
 } from "@fluentui/react-components";
+
+import '../styles/showcase.less'
 
 const beginnerCardCommunityData = [
     {

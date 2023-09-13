@@ -61,12 +61,14 @@ export default function Progress() {
     return (
         <div id="progress-page" className={styles.root}>
             <NavBar />
-            <TabList onTabSelect={onTabSelect} vertical>
-                <Tab value="beginner">Beginner</Tab>
-                <Tab value="mid">Some Experience</Tab>
-                <Tab value="experienced">Experienced</Tab>
-            </TabList>
-            <Showcase difficulty={contentClass} view="progress"/>
+            <div id="progress-page-content">
+                <TabList onTabSelect={onTabSelect} vertical>
+                    <Tab value="beginner">Beginner</Tab>
+                    <Tab value="mid">Some Experience</Tab>
+                    <Tab value="experienced">Experienced</Tab>
+                </TabList>
+                <Showcase difficulty={contentClass} view="progress"/>
+            </div>
         </div>
     )
 }
