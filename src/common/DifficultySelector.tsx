@@ -1,5 +1,4 @@
 // import React, { useState } from "react";
-import { Difficulty } from "./Community";
 import {
     makeStyles,
     shorthands,
@@ -13,9 +12,16 @@ import type {
     SelectTabEventHandler,
 } from "@fluentui/react-components";
 
+export enum Difficulty {
+    beginner = "Beginnner",
+    mid = "Intermediate",
+    experienced = "Experienced"
+}
+
 
 interface IDifficultySelectorProps {
     changeDifficulty: (diff: Difficulty) => void;
+    vertical?: boolean;
 }
 
 const useStyles = makeStyles({
@@ -32,6 +38,7 @@ const useStyles = makeStyles({
 
 export default function DifficultySelector(props: IDifficultySelectorProps) {
     const changeDifficulty  = props.changeDifficulty;
+    const orientation = props.vertical;
     const styles = useStyles();
     // @ts-ignore
     const onTabSelect: SelectTabEventHandler = (event: SelectTabEvent, data: SelectTabData) => {
@@ -51,7 +58,7 @@ export default function DifficultySelector(props: IDifficultySelectorProps) {
 
     return (
         <div id="difficulty-selector" className={styles.root}>
-            <TabList onTabSelect={onTabSelect}>
+            <TabList onTabSelect={onTabSelect} vertical={orientation} defaultSelectedValue="beginner">
                 <Tab value="beginner">Beginner</Tab>
                 <Tab value="mid">Intermediate</Tab>
                 <Tab value="experienced">Experienced</Tab>
