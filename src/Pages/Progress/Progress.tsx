@@ -5,7 +5,6 @@ import DifficultySelector, { Difficulty } from "../../common/DifficultySelector"
 import {
     Field,
     ProgressBar,
-    ProgressBarProps,
   } from "@fluentui/react-components";
 
 const beginnerProgressCardData: ShowcaseData[] = [
@@ -181,8 +180,8 @@ const experiencedProgressCardData: ShowcaseData[] = [
 
 export default function Progress() {
     const [difficulty, setDifficulty] = useState(Difficulty.beginner);
-    const [activitiesCompleted, setActivitiesCompleted] = useState(0.1);
-    const difficultyLengths = [10, 8, 7];
+    const activitiesCompleted = 0.1;
+    // const difficultyLengths = [10, 8, 7];
 
     const progressData = () => {
         switch (difficulty) {

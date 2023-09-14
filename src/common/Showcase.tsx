@@ -15,7 +15,6 @@ import {
 } from "@fluentui/react-components";
 
 import '../styles/showcase.less'
-import { router } from "../App";
 import { Link } from "@tanstack/react-router";
 
 
