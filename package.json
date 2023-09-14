@@ -13,7 +13,8 @@
     "@fluentui/react-components": "^9.30.4",
     "@tanstack/react-router": "^0.0.1-beta.187",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
